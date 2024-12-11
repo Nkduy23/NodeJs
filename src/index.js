@@ -29,6 +29,10 @@ app.get('/news', (req, res) => {
   res.render('news');
 });
 
+app.get('/old',(req, res) => {
+  res.render('old');
+})
+
 // Lắng nghe cổng
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
