@@ -3,9 +3,9 @@ const siteRouter = require('./site');
 
 function route(app) {
     // Routes
-    app.get('/', (req, res) => {
-        res.render('home');
-    });
+    // app.get('/', (req, res) => {
+    //     res.render('home');
+    // });
 
     //   app.get("/news", (req, res) => {
     //     res.render("news");

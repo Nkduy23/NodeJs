@@ -1,12 +1,24 @@
+const Course = require('../models/Course');
+
 class SiteController {
-    // [GET] / news
-    index(req, res) {
-        res.render('home');
+    // [GET] /
+    // async index(req, res) {
+    //     try {
+    //         const courses = await Course.find({}); // Truy vấn danh sách khóa học
+    //         res.json(courses); // Gửi phản hồi JSON
+    //     } catch (error) {
+    //         res.status(400).json({ error: 'ERROR' }); // Gửi phản hồi lỗi
+    //     }
+    // }
+    index(req, res, next) {
+        Course.find({})
+            .then(courses => res.json(courses))
+            .catch(next);
     }
 
-    // [GET] / search
+    // [GET] /search
     search(req, res) {
-        res.render('search');
+        res.render('search'); // Hiển thị trang tìm kiếm
     }
 }
 
